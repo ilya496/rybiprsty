@@ -1,0 +1,113 @@
+@use "../abstract" as *;
+
+.btn {
+  @extend %btn-reset;
+  border-radius: $border-radius;
+  gap: 0.5em;
+
+  .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .arrow {
+    width: 0.875rem;
+    height: 2px;
+    position: relative;
+    transition: $transition-duration;
+  }
+
+  .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--background-color);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: $transition-duration;
+    padding: 3px;
+    transform: rotate(-45deg);
+  }
+
+  &:hover .arrow {
+    background-color: var(--background-color);
+  }
+
+  &:hover .arrow:before {
+    right: 0;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  // Button Sizes
+  &--small {
+    font-size: 0.875em;
+    padding: 0.5em 0.75em;
+  }
+
+  &--medium {
+    font-size: 1em;
+    padding: 0.75em 1em;
+  }
+
+  &--large {
+    font-size: 1.125em;
+    padding: 0.875em 1.25em;
+  }
+
+  // Variants
+  &--primary {
+    color: var(--background-color);
+    background-color: var(--primary-color);
+
+    &:hover {
+      background-color: var(--accent-color);
+    }
+
+    .arrow {
+      background-color: var(--primary-color);
+    }
+  }
+
+  &--secondary {
+    color: var(--background-color);
+    background-color: var(--secondary-color);
+
+    &:hover {
+      background-color: var(--primary-color);
+    }
+
+    .arrow {
+      background-color: var(--secondary-color);
+    }
+  }
+
+  &--accent {
+    color: var(--background-color);
+    background-color: var(--accent-color);
+
+    &:hover {
+      background-color: var(--secondary-color);
+    }
+
+    .arrow {
+      background-color: var(--accent-color);
+    }
+  }
+
+  // Basic Button (No background)
+  &--basic {
+    background: none;
+    color: inherit;
+    padding: 0;
+    font-weight: normal;
+    border: none;
+    gap: 0.2em;
+  }
+}

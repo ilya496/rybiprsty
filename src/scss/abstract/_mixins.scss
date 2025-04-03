@@ -1,0 +1,35 @@
+@use "./variables" as *;
+
+@mixin xs {
+  @media #{inspect(map-get($breakpoints, xs))} {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media #{inspect(map-get($breakpoints, sm))} {
+    @content;
+  }
+}
+
+@mixin md {
+  @media #{inspect(map-get($breakpoints, md))} {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media #{inspect(map-get($breakpoints, lg))} {
+    @content;
+  }
+}
+
+@mixin theme-to-css($theme) {
+  @each $key, $value in $theme {
+    --#{$key}-color: #{if(type-of($value) == 'color', format-rgb($value), $value)};
+  }
+}
+
+@function format-rgb($color) {
+  @return "rgb(#{red($color)}, #{green($color)}, #{blue($color)})";
+}
