@@ -11,13 +11,11 @@ function NotFoundPage() {
           Back to the stage
         </a>
       </div>
-      <div className="not-found__animation">
-        <img
-          src="/images/vinyl.svg"
-          alt="Spinning vinyl"
-          className="not-found__vinyl"
-        />
-      </div>
+      <img
+        src="/images/vinyl.svg"
+        alt="Spinning vinyl"
+        className="not-found__vinyl"
+      />
     </div>
   );
 }

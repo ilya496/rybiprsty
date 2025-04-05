@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { LuInstagram } from "react-icons/lu";
-import { motion, AnimatePresence } from "framer-motion";
 
 const members = [
   {
@@ -30,52 +28,25 @@ const members = [
 ];
 
 function BandCarousel() {
-  const [currentMembers, setCurrentMembers] = useState(members);
-
-  const nextSlide = () => {
-    setCurrentMembers((prev) => [...prev.slice(1), prev[0]]);
-  };
-
-  const prevSlide = () => {
-    setCurrentMembers((prev) => [prev[prev.length - 1], ...prev.slice(0, -1)]);
-  };
-
   return (
-    <div className="container carousel-container">
-      <button className="carousel-btn left" onClick={prevSlide}>
-        &#10094;
-      </button>
-      <div className="carousel-wrapper">
-        <AnimatePresence mode="popLayout">
-          {currentMembers.slice(0, 3).map((member) => (
-            <motion.div
-              key={member.name}
-              className="member"
-              initial={{ opacity: 0, x: 0 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 0 }}
-              transition={{ duration: 0.5 }}
+    <div className="carousel">
+      {members.map((member) => (
+        <div key={member.name} className="member">
+          <img className="member__img" src={member.img} alt={member.name} />
+          <h3 className="member__name">{member.name}</h3>
+          <p className="member__role">{member.role}</p>
+          <div className="member__social">
+            <a
+              href={member.insta}
+              className="member__social__link"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <img className="member__img" src={member.img} alt={member.name} />
-              <h3 className="member__name">{member.name}</h3>
-              <p className="member__role">{member.role}</p>
-              <div className="member__social">
-                <a
-                  href={member.insta}
-                  className="member__social__link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <LuInstagram size={24} /> Navštívit profil
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </div>
-      <button className="carousel-btn right" onClick={nextSlide}>
-        &#10095;
-      </button>
+              <LuInstagram size={24} /> Navštívit profil
+            </a>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

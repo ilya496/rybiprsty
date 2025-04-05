@@ -43,3 +43,13 @@ p {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+@media (max-width: $breakpoint-md) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}

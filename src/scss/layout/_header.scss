@@ -1,20 +1,12 @@
 @use "../abstract" as *;
 
 .header {
-  height: $header-height;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  background-color: #fff;
 
   &__container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    height: 100%;
-  }
-
-  .cta {
-    display: flex;
     align-items: center;
-    gap: 10px;
   }
 }
