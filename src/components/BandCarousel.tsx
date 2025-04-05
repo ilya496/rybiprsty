@@ -18,7 +18,7 @@ const members = [
   {
     name: "Ilja Novák",
     role: "Baskytarista",
-    img: "/images/simon_ilja.jpg",
+    img: "/images/ilja_nese_pepu.jpg",
     insta: "https://www.instagram.com/ily_tracer_",
   },
   {

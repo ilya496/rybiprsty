@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "./Logo";
 
 function Header() {
+  const linkClass = ({ isActive }: { isActive: boolean }) =>
+    `nav__link ${isActive ? "nav__link--active" : ""}`;
+
   return (
     <header className="header">
       <div className="container header__container">
@@ -9,34 +12,34 @@ function Header() {
         <nav className="nav">
           <ul className="nav__list">
             <li className="nav__item">
-              <Link className="nav__link" to="/">
+              <NavLink className={linkClass} to="/">
                 Domů
-              </Link>
+              </NavLink>
             </li>
             <li className="nav__item">
-              <Link className="nav__link" to="/about">
+              <NavLink className={linkClass} to="/about">
                 O nás
-              </Link>
+              </NavLink>
             </li>
             <li className="nav__item">
-              <Link className="nav__link" to="/contact">
+              <NavLink className={linkClass} to="/contact">
                 Kontakt
-              </Link>
+              </NavLink>
             </li>
             <li className="nav__item">
-              <Link className="nav__link" to="/upcoming">
+              <NavLink className={linkClass} to="/upcoming">
                 Nadcházející akce
-              </Link>
+              </NavLink>
             </li>
             <li className="nav__item">
-              <Link className="nav__link" to="/gallery">
+              <NavLink className={linkClass} to="/gallery">
                 Galerie
-              </Link>
+              </NavLink>
             </li>
             <li className="nav__item">
-              <Link className="nav__link" to="/blog">
+              <NavLink className={linkClass} to="/blog">
                 Blog
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>

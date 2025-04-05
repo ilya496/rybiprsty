@@ -21,18 +21,20 @@ const events = [
 function GalleryPage() {
   return (
     <div className="container gallery-container">
-      <h1 className="gallery-title">📸 Galerie Událostí</h1>
-      <div className="event-grid">
-        {events.map(({ name, slug, image }) => (
-          <Link to={`/gallery/${slug}`} key={slug} className="event-card">
-            <img src={image} alt={name} className="event-card__img" />
-            <div className="event-card__info">
-              <h3>{name}</h3>
-              <button>Zobrazit</button>
-            </div>
-          </Link>
-        ))}
-      </div>
+      <section className="section">
+        <h1 className="gallery-title">Galerie Událostí</h1>
+        <div className="event-grid">
+          {events.map(({ name, slug, image }) => (
+            <Link to={`/gallery/${slug}`} key={slug} className="event-card">
+              <img src={image} alt={name} className="event-card__img" />
+              <div className="event-card__info">
+                <h3>{name}</h3>
+                <button>Zobrazit</button>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

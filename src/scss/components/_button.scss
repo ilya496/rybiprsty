@@ -2,7 +2,7 @@
 
 .btn {
   @extend %btn-reset;
-  border-radius: $border-radius;
+  border-radius: $border-radius-small;
   gap: 0.5em;
 
   .arrow-wrapper {

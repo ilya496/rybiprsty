@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { LuX } from "react-icons/lu";
 import { useParams } from "react-router-dom";
 
 const eventImages: Record<string, string[]> = {
@@ -37,21 +39,47 @@ function GalleryDetailPage() {
   const { eventName } = useParams();
   const images = eventImages[eventName || ""] || [];
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImage, setModalImage] = useState<string | null>(null);
+
+  // Open modal with selected image
+  const openModal = (src: string) => {
+    setModalImage(src);
+    setIsModalOpen(true);
+  };
+
+  // Close modal
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalImage(null);
+  };
+
   return (
     <div className="container gallery-detail-container">
-      <h1 className="gallery-detail-title">
-        📷 {eventName?.replace("-", " ")}
-      </h1>
-      <div className="image-grid">
-        {images.map((src, index) => (
-          <img
-            key={index}
-            src={src}
-            alt={`Event ${index + 1}`}
-            className="grid-image"
-          />
-        ))}
-      </div>
+      <section className="section">
+        <h1 className="gallery-detail-title">{eventName?.replace("-", " ")}</h1>
+        <div className="image-grid">
+          {images.map((src, index) => (
+            <img
+              key={index}
+              src={src}
+              alt={`Event ${index + 1}`}
+              className="grid-image"
+              onClick={() => openModal(src)}
+            />
+          ))}
+        </div>
+      </section>
+      {isModalOpen && modalImage && (
+        <div className="modal" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <img src={modalImage} alt="Full screen" className="modal-image" />
+            <button className="modal-close" onClick={closeModal}>
+              <LuX size={24} />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

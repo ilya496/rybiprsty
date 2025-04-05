@@ -1,0 +1,64 @@
+@use "../abstract" as *;
+
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // flex-direction: column;
+  height: content-height();
+  background-color: #212121;
+  color: white;
+  font-family: "Courier New", monospace;
+  // text-align: center;
+}
+
+.not-found__content {
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.not-found__title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.not-found__message {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.not-found__cta {
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  background-color: $accent-color;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.not-found__cta:hover {
+  background-color: $accent-color-hover;
+}
+
+.not-found__animation {
+  // position: absolute;
+  // bottom: 20px;
+  // left: 50%;
+  // transform: translateX(-50%);
+  animation: spin 5s linear infinite;
+}
+
+.not-found__vinyl {
+  width: 200px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

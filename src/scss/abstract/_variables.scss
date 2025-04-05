@@ -1,6 +1,6 @@
 // Colors
-// all colors should be located in themes folder
-// because we will have multiple themes in the future
+$accent-color: #d32f2f;
+$accent-color-hover: #b71c1c;
 
 // Typography
 $font-family: "Poppins", sans-serif;
@@ -42,7 +42,7 @@ $line-height-small: 1.4;
 $line-height-normal: 1.6;
 
 // Transition and Animation
-$transition-duration: 0.2s;
+$transition-duration: 0.3s;
 $transition-ease: ease-in-out;
 
 // Z-Index Values
@@ -50,8 +50,6 @@ $z-index-dropdown: 1000;
 $z-index-modal: 1050;
 $z-index-tooltip: 1500;
 
-// Others
-$image-path: "../images/";
-$border-radius: 0.625rem;
-$section-padding: 2rem;
-$section-padding-sm: 1.5rem;
+// Border Radius
+$border-radius-small: 0.625rem;
+$border-radius-large: 1rem;

@@ -1,0 +1,46 @@
+@use "../abstract" as *;
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  background: #ab2424;
+  border-radius: $border-radius-large;
+  margin-bottom: 0.675rem;
+
+  &__segment-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__segment {
+    flex: 1;
+    background: #ffffff1e;
+    color: #fff;
+    padding: 1rem;
+    border-radius: $border-radius-small;
+    font-family: "Courier New", monospace;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    min-width: 70px;
+  }
+
+  &__value {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: #e0e0e0;
+  }
+}

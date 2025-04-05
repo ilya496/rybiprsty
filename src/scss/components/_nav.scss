@@ -1,3 +1,5 @@
+@use "../abstract" as *;
+
 .nav {
   &__list {
     display: flex;
@@ -12,12 +14,20 @@
       content: "";
       height: 2px;
       width: 0;
-      background-color: #000;
+      background-color: $accent-color;
       transition: width 0.3s ease-in-out;
     }
 
     &:hover::after {
       width: 100%;
+    }
+  }
+
+  &__link {
+    font-size: 1.125rem;
+
+    &--active {
+      color: $accent-color;
     }
   }
 }

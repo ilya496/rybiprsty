@@ -1,4 +1,5 @@
 @use "../abstract" as *;
+
 *,
 *::before,
 *::after {
@@ -6,7 +7,11 @@
 }
 
 body {
-  background-color: var(--background-color);
+  font-family: "Courier New", monospace;
+  background-color: #ab2424;
+  background-image: url("/images/bg-pattern.png");
+  background-size: 30%;
+  background-position: center;
 }
 
 a {
