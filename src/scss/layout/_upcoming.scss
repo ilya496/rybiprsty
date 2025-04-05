@@ -1,0 +1,67 @@
+.event {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &__img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  &__info {
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  &__description,
+  &__location {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  &__tickets {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #d32f2f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #b71c1c;
+    }
+  }
+
+  .countdown {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+    // width: 100%;
+  }
+
+  .countdown-segment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 50px;
+  }
+
+  .countdown-value {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .countdown-label {
+    font-size: 12px;
+  }
+}
