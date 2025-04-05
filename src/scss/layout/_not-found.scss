@@ -42,3 +42,38 @@
 .not-found__vinyl {
   width: 200px;
 }
+
+@media (max-width: $breakpoint-sm) {
+  .not-found__content {
+    max-width: 100%;
+  }
+
+  .not-found__title {
+    font-size: 2rem;
+  }
+
+  .not-found__message {
+    font-size: 1rem;
+  }
+
+  .not-found__cta {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .not-found__vinyl {
+    width: 150px;
+  }
+}
+
+@media (max-width: $breakpoint-xs) {
+  .not-found {
+    flex-direction: column;
+  }
+
+  .not-found__content {
+    margin-right: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}

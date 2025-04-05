@@ -28,9 +28,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // aspect-ratio: 1 / 1;
-    // width: 100%;
-    // min-width: 70px;
   }
 
   &__value {
@@ -42,5 +39,17 @@
     font-size: 0.875rem;
     text-transform: uppercase;
     color: #e0e0e0;
+  }
+}
+
+@media (max-width: $breakpoint-xs) {
+  .countdown {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.625rem;
+    padding: 0.625rem;
+  }
+
+  .countdown__segment {
+    padding: 0.5rem;
   }
 }
