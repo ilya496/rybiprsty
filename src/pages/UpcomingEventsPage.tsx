@@ -4,9 +4,9 @@ import EventMap from "../components/EventMap";
 
 const event = {
   title: "Arabský páteček",
-  date: new Date("2025-04-16T22:00:00"),
+  date: new Date("2025-04-16T19:00:00"),
   description:
-    "Zažijte nezapomenutelný rockový večer plný energie a skvělé hudby!       lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+    "Zažijte nezapomenutelný rockový večer plný energie a skvělé hudby! Přijďte si poslechnout kapely Dewastix, Cido a Rybí Prsty. Těšíme se na vás!",
   location:
     "Stanice 6 (Bývalá železniční stanice Praha - Bubeneč), Goetheho, Prague 6-Bubeneč",
   image: "/images/patecek-16-4-2025.jpg",

@@ -44,6 +44,10 @@ p {
   margin: 0 auto;
 }
 
+#klikz-16 {
+  display: none;
+}
+
 @media (max-width: $breakpoint-md) {
   html {
     font-size: 14px;
