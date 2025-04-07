@@ -1,33 +1,43 @@
-import { LuArrowUpRight } from "react-icons/lu";
+import { Post as IPost, PostLayout } from "../types/post";
+import { truncate } from "../utils/truncate";
 
-function Post() {
+interface PostProps extends IPost {
+  layout?: PostLayout;
+}
+
+function Post({
+  title,
+  author,
+  date,
+  tags,
+  imageUrl,
+  excerpt,
+  layout = "vertical",
+}: PostProps) {
   return (
-    <article className="post">
-      <img
-        src="https://placehold.co/600x300"
-        alt="Post image"
-        className="post__img"
-      />
+    <article className={`post post--${layout}`}>
+      <img src={imageUrl} alt="Post image" className="post__img" />
       <div className="post__content">
         <div className="post__heading">
-          <span className="post__author">John Doe</span>
+          <span className="post__author">{author}</span>
           <span className="post__dot"></span>
           <time dateTime="2025-04-07" className="post__date">
-            {new Date().toDateString()}
+            {date}
           </time>
         </div>
         <div className="post__body">
-          <h3 className="post__title">
-            Post title <LuArrowUpRight />
-          </h3>
-          <p className="post__description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
-            possimus!
-          </p>
+          <h3 className="post__title">{title}</h3>
+          <p className="post__description">{truncate(excerpt)}</p>
         </div>
         <div className="post__tags">
-          <span className="post__tag post__tag--purple">Design</span>
-          <span className="post__tag post__tag--blue">Research</span>
+          {tags.map((tag) => (
+            <span
+              key={tag.value}
+              className={`post__tag post__tag--${tag.theme}`}
+            >
+              {tag.value}
+            </span>
+          ))}
         </div>
       </div>
     </article>
