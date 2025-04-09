@@ -6,6 +6,7 @@ import GalleryDetailPage from "./pages/GalleryDetailPage";
 import UpcomingEventsPage from "./pages/UpcomingEventsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import BlogPage from "./pages/BlogPage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/gallery/:eventName" element={<GalleryDetailPage />} />
         <Route path="/upcoming" element={<UpcomingEventsPage />} />
