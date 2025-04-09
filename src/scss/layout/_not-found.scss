@@ -41,6 +41,7 @@
 
 .not-found__vinyl {
   width: 200px;
+  animation: rotate 5s linear infinite;
 }
 
 @media (max-width: $breakpoint-sm) {
