@@ -1,0 +1,41 @@
+@use "../abstract" as *;
+
+.accordion {
+  &__item {
+    &--open .accordion__content {
+      max-height: 100%;
+    }
+  }
+
+  &__item:not(:last-child) {
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__header {
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  &__content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  &__inner {
+    padding: 0 0 0.5rem 0;
+  }
+}

@@ -2,53 +2,54 @@ import { useState } from "react";
 import { LuX } from "react-icons/lu";
 import { useParams } from "react-router-dom";
 
-const eventImages: Record<string, string[]> = {
-  "patecek-10-1-2025": [
-    "/images/patecek_1/1.jpg",
-    "/images/patecek_1/2.jpg",
-    "/images/patecek_1/3.jpg",
-    "/images/patecek_1/4.jpg",
-    "/images/patecek_1/5.jpg",
-    "/images/patecek_1/6.jpg",
-    "/images/patecek_1/7.jpg",
-    "/images/patecek_1/8.jpg",
-    "/images/patecek_1/9.jpg",
-    "/images/patecek_1/10.jpg",
-  ],
-  "patecek-28-2-2025": [
-    "/images/patecek_2/1.jpg",
-    "/images/patecek_2/2.jpg",
-    "/images/patecek_2/3.jpg",
-    "/images/patecek_2/4.jpg",
-    "/images/patecek_2/5.jpg",
-    "/images/patecek_2/6.jpg",
-    "/images/patecek_2/7.jpg",
-    "/images/patecek_2/8.jpg",
-    "/images/patecek_2/9.jpg",
-  ],
-  "goofy-fotky": [
-    "/images/kuba_simon_pivo.jpg",
-    "/images/nigga.jpg",
-    "/images/viktor_goofy.jpg",
-    "/images/skupinova_fotka.jpg",
-    "/images/simon_viktor.jpg",
-  ],
+type EventGalleryMeta = {
+  folder: string;
+  count: number;
+  prefix?: string;
+  startIndex?: number;
+};
+
+const eventImageMeta: Record<string, EventGalleryMeta> = {
+  "patecek-10-1-2025": { folder: "patecek_1", count: 10 },
+  "patecek-28-2-2025": { folder: "patecek_2", count: 9 },
+  "patecek-16-4-2025": { folder: "patecek_3", count: 81 },
+  "goofy-fotky": {
+    folder: "goofy_fotky",
+    count: 5,
+  },
 };
 
 function GalleryDetailPage() {
   const { eventName } = useParams();
-  const images = eventImages[eventName || ""] || [];
+
+  const getImages = () => {
+    const meta = eventImageMeta[eventName || ""];
+
+    if (!meta) return [];
+
+    const {
+      folder,
+      count,
+      prefix = `/images/${folder}/`,
+      startIndex = 1,
+    } = meta;
+
+    return Array.from({ length: count }, (_, i) => {
+      const index = startIndex + i;
+      return `${prefix}${index}.jpg`;
+    });
+  };
+
+  const images = getImages();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState<string | null>(null);
 
-  // Open modal with selected image
   const openModal = (src: string) => {
     setModalImage(src);
     setIsModalOpen(true);
   };
 
-  // Close modal
   const closeModal = () => {
     setIsModalOpen(false);
     setModalImage(null);

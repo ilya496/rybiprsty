@@ -37,3 +37,33 @@
     border-radius: $border-radius-large;
   }
 }
+
+@media (max-width: $breakpoint-sm) {
+  .hero__container {
+    padding: 4rem 1rem;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__text {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: $breakpoint-xs) {
+  .hero__container {
+    padding: 2rem 0rem;
+  }
+
+  .hero__title {
+    font-size: 1.5rem;
+  }
+
+  .hero__text {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+}

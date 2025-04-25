@@ -1,9 +1,19 @@
 @use "../abstract" as *;
 
+.events__container {
+  background-color: #fff;
+  margin-top: 2rem;
+  border-radius: $border-radius-large;
+}
+
 .event {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
 
   &__content {
     display: flex;
@@ -15,6 +25,7 @@
   &__img {
     width: 100%;
     max-width: calc(50% - 0.75rem);
+    min-width: calc(40% - 0.75rem);
     border-radius: $border-radius-small;
     margin-bottom: 1rem;
   }
@@ -47,6 +58,19 @@
 
     &:hover {
       background: $accent-color-hover;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    color: $accent-color;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+
+    &:hover {
+      color: $accent-color-hover;
+      text-decoration: underline;
     }
   }
 

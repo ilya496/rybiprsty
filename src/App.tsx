@@ -18,7 +18,7 @@ function App() {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/gallery/:eventName" element={<GalleryDetailPage />} />
         <Route path="/upcoming" element={<UpcomingEventsPage />} />
-        <Route path="/blog" element={<BlogPage />} />
+        {/* <Route path="/blog" element={<BlogPage />} /> */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>

@@ -12,6 +12,11 @@ const events = [
     image: "/images/patecek_2/1.jpg",
   },
   {
+    name: "16.4.2025 - Arabský Páteček",
+    slug: "patecek-16-4-2025",
+    image: "/images/patecek_3/1.jpg",
+  },
+  {
     name: "Goofy fotky",
     slug: "goofy-fotky",
     image: "/images/viktor_goofy.jpg",
