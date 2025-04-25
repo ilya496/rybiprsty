@@ -35,11 +35,13 @@ function UpcomingEventsPage() {
               {event.location}
             </p>
             <CountdownTimer targetDate={event.date} />
+            {/* TODO: Make link disabled if the event has already passed */}
             <a
               href={event.tickets}
               target="_blank"
               rel="noopener noreferrer"
               className="event__tickets"
+              // disabled
             >
               Kupte si lístky
             </a>
