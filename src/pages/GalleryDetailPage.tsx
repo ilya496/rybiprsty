@@ -13,10 +13,6 @@ const eventImageMeta: Record<string, EventGalleryMeta> = {
   "patecek-10-1-2025": { folder: "patecek_1", count: 10 },
   "patecek-28-2-2025": { folder: "patecek_2", count: 9 },
   "patecek-16-4-2025": { folder: "patecek_3", count: 81 },
-  "goofy-fotky": {
-    folder: "goofy_fotky",
-    count: 5,
-  },
 };
 
 function GalleryDetailPage() {
