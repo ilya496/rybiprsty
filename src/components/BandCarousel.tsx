@@ -4,25 +4,25 @@ const members = [
   {
     name: "Viktor Jakovec",
     role: "Zpěvák & Lead kytarista",
-    img: "/images/viktor_zarovka.jpg",
+    img: "/images/band_profile/viky.jpg",
     insta: "https://www.instagram.com/viktorjakove",
   },
   {
     name: "Šimon Horník",
     role: "Rythm kytarista",
-    img: "/images/simon_travnik.jpg",
+    img: "/images/band_profile/hornix.jpg",
     insta: "https://www.instagram.com/_hornix_",
   },
   {
     name: "Ilja Novák",
     role: "Baskytarista",
-    img: "/images/ilja_nese_pepu.jpg",
+    img: "/images/band_profile/ilja.jpg",
     insta: "https://www.instagram.com/ily_tracer_",
   },
   {
     name: "Jakub Vejražka",
     role: "Bubeník",
-    img: "/images/kuba_simon_metro.jpg",
+    img: "/images/band_profile/kubav.jpg",
     insta: "https://www.instagram.com/kubavejrazka",
   },
 ];

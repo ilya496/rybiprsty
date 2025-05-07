@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 const events = [
   {
-    name: "10.1.2025 - Arabský Páteček",
-    slug: "patecek-10-1-2025",
-    image: "/images/patecek_1/1.jpg",
+    name: "16.4.2025 - Arabský Páteček",
+    slug: "patecek-16-4-2025",
+    image: "/images/patecek_3/1.jpg",
   },
   {
     name: "28.2.2025 - Arabský Páteček",
@@ -12,14 +12,9 @@ const events = [
     image: "/images/patecek_2/1.jpg",
   },
   {
-    name: "16.4.2025 - Arabský Páteček",
-    slug: "patecek-16-4-2025",
-    image: "/images/patecek_3/1.jpg",
-  },
-  {
-    name: "Goofy fotky",
-    slug: "goofy-fotky",
-    image: "/images/viktor_goofy.jpg",
+    name: "10.1.2025 - Arabský Páteček",
+    slug: "patecek-10-1-2025",
+    image: "/images/patecek_1/1.jpg",
   },
 ];
 
